@@ -1,0 +1,16 @@
+imports:
+- path: ha-service.py
+- path: service.py
+- path: container_helper.py
+- path: container_instance_template.py
+- path: lb-l3.py
+
+resources:
+- name: frontend
+  type: ha-service.py
+  properties:
+    image: vaikas/nodejsservicestatic
+    port: 8080
+    zones:
+    - us-central1-f
+
